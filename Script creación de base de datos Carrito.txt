@@ -1,0 +1,273 @@
+
+
+
+--Crear base de datos:
+
+create database Carrito
+
+--Utilizar la base de datos:
+
+use Carrito
+
+--Crear tabla usuario:
+
+create table Usuario(
+IdUsuario int primary key identity,
+NombreCompleto varchar(50),
+Direccion varchar(50),
+Telefono varchar(50),
+TipoUsuario varchar(50),
+Identificacion varchar(50),
+Clave varchar(100)
+)
+
+
+--Crear usuario admistrador:
+
+insert into Usuario(NombreCompleto,Direccion,Telefono,TipoUsuario,Identificacion,Clave)
+values('Administrador','','','Admin','Admin','345')
+
+
+--Crear tabla Productos:
+
+create table Productos(
+IdProducto int primary key identity,
+NombreProd varchar(50),
+Cantidad int,
+Descripcion varchar(100)
+)
+
+
+--Procedimiento listar productos:
+
+create proc sp_lista_productos
+as
+begin
+     select
+     IdProducto,NombreProd,Cantidad,Descripcion
+     from Productos
+end
+
+
+--Procedimiento guardar producto:
+
+create proc sp_guardar_producto(
+@nombreProd varchar(50),
+@cantidad int,
+@descripcion varchar(100)
+)as
+begin
+    insert into Productos(NombreProd,Cantidad,Descripcion)
+    values(@nombreProd,@cantidad,@descripcion)
+end
+
+
+--Procedimiento listar producto
+
+create proc sp_listar_producto(
+@idProducto int
+)as
+begin
+     select
+     IdProducto,NombreProd,Cantidad,Descripcion
+     from Productos
+     where IdProducto = @idProducto
+end
+
+--Procedimiento editar producto:
+
+create proc sp_editar_producto(
+@idProducto int,
+@nombreProd varchar(50),
+@cantidad int,
+@descripcion varchar(100)
+)as
+begin
+      
+     update Productos set
+     NombreProd = isnull(@nombreProd,NombreProd),
+     Cantidad = isnull(@cantidad,Cantidad),
+     Descripcion = isnull(@descripcion,Descripcion)
+     where IdProducto = @idProducto
+end
+
+
+--Procedimiento editar3 producto:
+
+create proc sp_editar3_producto(
+@idProducto int,
+@nombreProd varchar(50),
+@cantidad int,
+@descripcion varchar(100)
+)as
+begin
+      
+     update Productos set
+     NombreProd = isnull(@nombreProd,NombreProd),
+     Cantidad = isnull(@cantidad,0),
+     Descripcion = isnull(@descripcion,Descripcion)
+     where IdProducto = @idProducto
+end
+
+
+--Procedimiento eliminar producto:
+
+create proc sp_eliminar_producto(
+@idProducto int
+)as
+begin
+
+   delete from Productos where IdProducto = @idProducto
+
+end
+
+
+--Procedimiento listar usuarios
+
+create proc sp_listar_usuarios(
+@idUsuario int
+)as
+begin
+     select
+     IdUsuario,NombreCompleto,Direccion,Telefono,TipoUsuario,Identificacion,Clave
+     from Usuario
+     where IdUsuario != @idUsuario
+end
+
+
+--Procedimiento listar usuario
+
+create proc sp_listar_usuario(
+@idUsuario int
+)as
+begin
+     select
+     IdUsuario,NombreCompleto,Direccion,Telefono,TipoUsuario,Identificacion,Clave
+     from Usuario
+     where IdUsuario = @idUsuario
+end
+
+
+--Procedimiento editar usuarios:
+
+create proc sp_editar_usuarios(
+@idUsuario int,
+@nombreCompleto varchar(50),
+@direccion varchar(50),
+@telefono varchar(50),
+@tipoUsuario varchar(50),
+@identificacion varchar(50),
+@clave varchar(100)
+)as
+begin
+      
+     update Usuario set
+     NombreCompleto = isnull(@nombreCompleto,NombreCompleto),
+     Direccion = isnull(@direccion,Direccion),
+     Telefono = isnull(@telefono,Telefono),
+     TipoUsuario = isnull(@tipoUsuario,TipoUsuario),
+     Identificacion = isnull(@identificacion,Identificacion),
+     Clave = isnull(@clave,Clave)
+     where IdUsuario = @idUsuario
+end
+
+
+--Procedimiento eliminar usuario:
+
+create proc sp_eliminar_usuario(
+@idUsuario int
+)as
+begin
+
+   delete from Usuario where IdUsuario = @idUsuario
+
+end
+
+
+--Crear tabla Transac:
+
+create table Transac(
+IdTransac int primary key identity,
+NombreCli varchar(50),
+IdProducto int,
+NombreProd varchar(50),
+Descripcion varchar(100),
+Cantidad int,
+)
+
+
+
+--Procedimiento guardar transac:
+
+create proc sp_guardar_transac(
+@nombreCli varchar(50),
+@idProducto int,
+@nombreProd varchar(50),
+@descripcion varchar(100),
+@cantidad int
+)as
+begin
+    insert into Transac(NombreCli,IdProducto,NombreProd,Descripcion,Cantidad)
+    values(@nombreCli,@idProducto,@nombreProd,@descripcion,@cantidad)
+end
+
+
+--Procedimiento listar transac:
+
+create proc sp_lista_transac
+as
+begin
+     select
+     IdTransac,NombreCli,IdProducto,NombreProd,Descripcion,Cantidad
+     from Transac
+end
+
+
+--Procedimiento eliminar transac:
+
+create proc sp_eliminar_transac(
+@idTransac int
+)as
+begin
+
+   delete from Transac where IdTransac = @idTransac
+
+end
+
+
+--Procedimiento editar cantidad:
+
+create proc sp_editar_cantidad(
+@idProducto int,
+@cantidad int
+)as
+begin
+      
+     update Productos set
+     Cantidad = isnull(@cantidad,Cantidad)
+     where IdProducto = @idProducto
+end
+
+
+--Procedimiento editar cantidad2:
+
+create proc sp_editar_cantidad2(
+@idProducto int,
+@cantidad int
+)as
+begin
+      
+     update Productos set
+     Cantidad = isnull(@cantidad,0)
+     where IdProducto = @idProducto
+end
+
+
+--Seleccionar tabla Usuario:
+
+select * from Usuario
+
+
+--Seleccionar tabla Productos:
+
+select * from Productos

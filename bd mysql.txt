@@ -1,0 +1,23 @@
+
+
+-- creating the database
+CREATE DATABASE crud_nodejs_db;
+
+-- using the database 
+use crud_nodejs_db;
+
+-- creating a table
+CREATE TABLE users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user VARCHAR(50) NOT NULL,
+    rol VARCHAR(50) NOT NULL
+);
+
+INSERT INTO users (user, rol)
+VALUES ("Santy", "data entry");
+
+-- tp show all tables
+SHOW TABLES;
+
+-- to describe the table
+describe users;

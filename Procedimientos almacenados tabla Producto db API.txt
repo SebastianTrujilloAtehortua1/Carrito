@@ -1,0 +1,68 @@
+
+
+select * from Producto
+
+---------Comando para ejecutar el procedimiento si lo quiere comprobar en el query:
+
+exec sp_lista_productos
+
+
+--------------------------------------------------------------------------------------
+
+
+create proc sp_lista_productos
+as
+begin
+     select
+     IdProducto,CodigoBarra,Nombre,
+     Marca,Categoria,Precio
+     from Producto
+end
+
+------------------------------------------
+
+create proc sp_guardar_producto(
+@codigoBarra varchar(50),
+@nombre varchar(50),
+@marca varchar(50),
+@categoria varchar(50),
+@precio decimal(10,2)
+)as
+begin
+    insert into Producto(CodigoBarra,Nombre,Marca,Categoria,Precio)
+    values(@codigoBarra,@nombre,@marca,@categoria,@precio)
+end
+
+-------------------------------------------------------------------------
+
+create proc sp_editar_producto(
+@idProducto int,
+@codigoBarra varchar(50) null,
+@nombre varchar(50) null,
+@marca varchar(50) null,
+@categoria varchar(50) null,
+@precio decimal(10,2) null
+)as
+begin
+      
+     update Producto set
+     CodigoBarra = isnull(@codigoBarra,CodigoBarra),
+     Nombre = isnull(@nombre,Nombre),
+     Marca = isnull(@marca,Marca),
+     Categoria = isnull(@categoria,Categoria),
+     Precio = ISNULL(@precio,Precio)
+     where IdProducto = @idProducto
+end
+
+
+----------------------------------------------------------
+
+
+create proc sp_eliminar_producto(
+@idProducto int
+)as
+begin
+
+   delete from Producto where IdProducto = @idProducto
+
+end

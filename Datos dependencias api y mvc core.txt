@@ -1,0 +1,32 @@
+
+
+-----Dependencias para api con controlador entityframework
+
+Microsoft.EntityFrameworkCore.SqlServer
+
+Microsoft.EntityFrameworkCore.Tools
+
+
+
+------Dependencias para api con controlador vacio y uso de storeprocedures en sqlserver
+
+System.Data.SqlClient
+
+
+
+------Dependencias para api con autenticación y token
+
+Microsoft.AspNetCore.Authentication.JwtBearer
+
+System.IdentityModel.Tokens.Jwt
+
+
+
+
+-----Dependencias para consumo de api con mvc
+
+Microsoft.EntityFrameworkCore.SqlServer
+
+Microsoft.EntityFrameworkCore.Tools
+
+Microsoft.VisualStudio.Web.CodeGeneration.Design

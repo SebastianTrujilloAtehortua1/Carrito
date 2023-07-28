@@ -1,0 +1,77 @@
+
+-----Ver datos de ip en conexión y otros en pc
+
+ipconfig
+
+-----Ejecutar la api en docker con localhost y IPv4
+
+
+http://localhost:2023/api/Books
+
+http://192.168.1.125:2023/api/Books
+
+
+
+---------Links imagenes .net
+
+https://hub.docker.com/_/microsoft-dotnet-sdk
+
+https://hub.docker.com/_/microsoft-dotnet-aspnet
+
+
+---------Instalar imagenes .net
+
+
+docker pull mcr.microsoft.com/dotnet/sdk:7.0
+
+
+docker pull mcr.microsoft.com/dotnet/aspnet:7.0
+
+
+
+--------Crear imagen docker
+
+docker image build -t webapi_contenerizada:1.0 -f .\Dockerfile .
+
+
+-------Ver imagenes
+
+docker image ls
+
+
+-------Crear contenedor con imagen
+
+docker container create --name webapi_contenerizada-container -p 2023:8080 webapi_contenerizada:1.0
+
+
+------Iniciar contenedor
+
+docker container start webapi_contenerizada-container
+
+
+------Ver contenedor en ejecución
+
+docker container ls
+
+
+------Detener contenedor        dato al final es el id del contenedor puede ser los tres primeros caracteres
+
+docker container stop 470
+
+
+------Borrar contenedor
+
+docker container rm 470
+
+
+------Borrar imagen que contiene el contenedor
+
+docker image rm webapi_contenerizada:1.0
+
+
+
+#25 ASP.NET Core y Angular | Sistema de Ventas | Desplegar nuestra API con Docker.
+
+
+https://www.youtube.com/watch?v=N7LjzWgHv_g
+

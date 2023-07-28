@@ -1,0 +1,45 @@
+
+
+
+public class DemoJs
+{
+    public string JsFunction { get; set; }
+}
+
+
+
+
+public class DemoController : Controller
+{
+    //
+    // GET: /Demo/
+    public ActionResult Index()
+    {
+        var demoJs = new DemoJs();
+        demoJs.JsFunction = "$( window ).load(function() { DisparaAlert();}); ";
+        return View(demoJs);
+    }
+}    
+
+
+
+
+@model Demo.Models.DemoJs
+ 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<h2>
+Index</h2>
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+ 
+    @Model.JsFunction;
+ 
+    function DisparaAlert() {
+        alert('hola');
+    }
+ 
+</script>

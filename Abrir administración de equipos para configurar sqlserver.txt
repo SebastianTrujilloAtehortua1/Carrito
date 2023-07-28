@@ -1,0 +1,6 @@
+
+
+Tecla windows   r
+
+
+compmgmt.msc

@@ -1,0 +1,22 @@
+
+
+
+Node, Mongo & Docker Compose | Para iniciantes
+
+
+https://www.youtube.com/watch?v=w1v6DspnUBQ
+
+
+
+
+Docker Compose con Nodejs y MySQL Tutorial
+
+
+https://www.youtube.com/watch?v=Aj8E-Vhs1VM&list=PLo5lAe9kQrwpmayOSKOTfHv70t8NHXa8x&index=22
+
+
+
+¿Qué es DevOps y CI/CD?
+
+
+https://www.youtube.com/watch?v=xm1psJEFFIY&list=RDCMUCMn28O1sQGochG94HdlthbA&index=5

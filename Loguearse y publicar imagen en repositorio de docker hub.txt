@@ -1,0 +1,25 @@
+
+
+
+-----Loguearse a docker hub en cmd
+
+docker login
+
+------O tambien utilizando nombre del repositorio y contraseña de docker hub
+
+docker login -u sebastiantrujilloatehortua -p Sebas1989+
+
+
+-----Etiquetar imagen en docker desktop para publicar en repositorio de docker hub
+
+docker tag rest-api-node:2.0 sebastiantrujilloatehortua/rest-api-node:2.0
+
+
+------Publicar imagen etiquetada en repositorio de docker hub
+
+docker push sebastiantrujilloatehortua/rest-api-node:2.0
+
+
+-----Crear contenedor en docker desktop para imagen
+
+docker container create --name rest-api-node-container2 -p 8000:3000 sebastiantrujilloatehortua/rest-api-node:2.0

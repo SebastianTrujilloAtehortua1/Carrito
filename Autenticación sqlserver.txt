@@ -1,0 +1,32 @@
+
+Server type: Database Engine
+
+Server name: 192.168.1.125,50642      o tambien    Server name: 192.168.1.125,60491
+
+Authentication: SQL Server Authentication
+
+Login: sa
+
+Password: 123
+
+
+
+
+
+Habilitar usuario sa en SQL Server
+
+
+https://www.youtube.com/watch?v=wF1fnziprGc
+
+
+SQL.::.Crear inicio de sesión con autenticación SQL
+
+
+https://www.youtube.com/watch?v=ilIaiGfj-1U
+
+
+
+Sql Server habilitar conexiones remotas TCPIP
+
+
+https://www.youtube.com/watch?v=NoRZc0tQeq4

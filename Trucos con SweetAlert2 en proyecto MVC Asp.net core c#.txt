@@ -1,0 +1,15 @@
+
+
+Uso de SweetAlert2 en proyecto MVC
+
+
+https://www.youtube.com/watch?v=YV5Z33hA6vE
+
+
+
+
+
+MVC con SweetAlert2 - Introducción - Interceptando un Formulario - ASP.NET Core MVC
+
+
+https://www.youtube.com/watch?v=798A0jftqIo

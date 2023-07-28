@@ -1,0 +1,24 @@
+
+-------------Descargar librerias:
+
+
+Microsoft.EntityFrameworkCore.SqlServer
+
+Microsoft.EntityFrameworkCore.Tools
+
+
+
+-------------En consola de paquetes nuget código para migrar tablas de la base de datos a modelos como clases:
+
+
+
+Scaffold-DbContext "Data Source=DESKTOP-LJ8U5AS\SQLEXPRESS;Initial Catalog=Carrito;Integrated Security=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models
+
+
+
+-------------Ejemplo de cadena de conexión a la base de datos:
+
+
+"Data Source=DESKTOP-LJ8U5AS\\SQLEXPRESS;Initial Catalog=Carrito;Integrated Security=True;TrustServerCertificate=True;"
+
+

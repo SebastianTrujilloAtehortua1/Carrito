@@ -1,0 +1,4 @@
+
+
+
+https://www.jasoft.org/Blog/post/resolver-error-al-conectarse-a-sql-server-debido-al-certificado-ssl

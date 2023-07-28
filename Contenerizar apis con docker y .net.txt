@@ -1,0 +1,28 @@
+
+
+
+Primer Micro Servicio usando ASP .NET Core - configurar servicio tcp/ip para docker
+
+
+
+https://www.youtube.com/watch?v=guay79V8ufI
+
+
+
+
+Contenedores Docker con microservicios ASP NET Core
+
+
+
+https://www.youtube.com/watch?v=oM8PffdoxqM
+
+
+
+va:20:31
+
+
+
+API/REST-NET-CORE-6-Docker
+
+
+https://www.youtube.com/watch?v=PMk6jTErHLU

@@ -1,0 +1,81 @@
+
+
+
+
+
+
+$( window ).load(function() { mensaje1();}); 
+
+
+$("#modal").load("<%=Url.Action("Reporte","Home", new {id = rutEmpresa})%>");
+
+
+$( window ).load("<%=Url.Action("Index")%>");
+
+
+var url = "@Url.Action('EvaluaAutenticacion', 'Home', new { usuario = '_usuario' })";
+
+---------------------------------------
+
+var url = "@Url.Action("Index")";
+
+window.location.href = url;
+
+---------------------------------------
+
+location.href = "@Url.Action("Index")";
+
+
+
+
+ var urlAdd = '@Url.Action("metodo", "controlador")';
+
+
+
+
+//window.location = 'http://localhost:5048/Home/Admin';
+
+
+location.href = "@Url.Action("Admin")";
+
+
+
+
+
+
+
+-------Manejo de jquery, url, metodo-controlador-parametros c#:
+
+
+https://social.msdn.microsoft.com/Forums/es-ES/79b26f16-7b16-4b63-8a8e-b464c3275e3c/como-pasar-varios-datos-de-un-view-a-un-metodo-actionresult?forum=aspnetmvces
+
+
+
+-------Manejo ajax, controlador-metodo c#:
+
+
+https://es.stackoverflow.com/questions/381505/c%C3%B3mo-redireccionar-a-una-vista-asp-net-mvc-enviando-par%C3%A1metros
+
+
+
+--------sweetalert2 url en el then:
+
+
+https://es.stackoverflow.com/questions/124454/problema-con-sweetalert-confirmar-enlace
+
+
+
+---------Desde javascript hacia (url) un metodo-controlador c#:
+
+
+https://social.msdn.microsoft.com/Forums/es-ES/0ac09e1d-fa1c-4ccc-b032-c55447e60fb5/redirigir-el-flujo-de-la-aplicacin-desde-javascript-hacia-un-controller?forum=aspnetmvces
+
+
+
+https://social.msdn.microsoft.com/Forums/es-ES/7461adcc-5dac-491a-8099-7e4245612c86/llamar-a-un-metodo-c-en-javascript?forum=aspnetmvces
+
+
+---------Desde javascript hacia (url) un metodo-controlador c# y pasando parametros con replace:
+
+
+https://www.variablenotfound.com/2012/02/pasar-variables-de-script-un-urlaction.html

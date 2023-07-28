@@ -1,0 +1,86 @@
+
+
+-----Crear imagen docker
+
+docker build -t api-node .
+
+
+-----Ver imagenes creadas en docker
+
+docker images
+
+
+-----Ejecutar imagen de docker creada en un contenedor
+
+docker run -p 4000:3000 api-node
+
+
+
+------Archivo docker-compose.yml
+
+version: "3"
+
+services:
+    web:
+        container_name: exampleapp
+        restart: always
+        build: .
+        ports:
+            - "5000:3000"
+        links:
+            - mongo
+    mongo:
+        container_name: mymongodatabase
+        image: mongo
+        ports:
+            - "27018:27017"
+
+
+
+-----Versión docker compose
+
+docker compose version
+
+
+-----Construir archivo docker-compose.yml como imagen
+
+docker-compose build
+
+
+-----Ver imagenes creadas en docker
+
+docker images
+
+
+-----Crear contenedor de archivo docker-compose.yml
+
+docker-compose up
+
+
+-----Ver contenedores en ejecución
+
+docker ps
+
+
+-----Conectarse a contenedor en ejecución
+
+docker exec -it exampleapp bash
+
+
+-----Ver archivos en el proyecto estando conectado al contenedor en ejecución
+
+ls
+
+
+-----Ver archivos con punto en el proyecto estando conectado al contenedor en ejecución
+
+ls -a
+
+
+-----Parar contenedor de docker compose en ejecución
+
+docker-compose stop
+
+
+
+
